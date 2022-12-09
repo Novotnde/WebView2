@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage">
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+              <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="150" />
+          
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+             <Label Text="TEST"
+                            VerticalOptions="Start" 
+                            HorizontalOptions="Center"
+                            TextColor="Black">
+             </Label>
+        </Grid>
+        <!-- Place new controls here -->
+        <Grid Grid.Row="1"  BackgroundColor="Blue"
+              HeightRequest="150">
+            <ScrollView VerticalOptions="Fill">
+                <local:ExtendedWebView
+                    x:Name="czView"
+                    HeightRequest="150" 
+                    WidthRequest="150" 
+                    HorizontalOptions="Start"
+                    Opacity="1"
+                    Source="{Binding Cz, Mode=TwoWay}"
+                    VerticalOptions="Start" />
+            </ScrollView>
+
+        </Grid>
+        <Grid Grid.Row="2" 
+              BackgroundColor="red"
+              HeightRequest="150">
+            <ScrollView VerticalOptions="Fill">
+                <local:ExtendedWebView 
+                    HeightRequest="150" 
+                    WidthRequest="150" 
+                    HorizontalOptions="Start"
+                    x:Name="enView"
+                    Opacity="1"/>
+             
+            </ScrollView>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
